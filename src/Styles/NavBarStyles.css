@@ -130,7 +130,122 @@ span #HomeLight:hover,
         margin-left: 10px;
     }
     .input-group input {
-        width: 200px;
+        width: 185px;
+    }
+    #search {
+        position: absolute;
+        margin-left: 175px;
     }
     
 }
+
+/* NavbarStyles.css */
+
+/* Hide mobile menu by default */
+.mobile-menu {
+    display: none;
+  }
+  
+  /* Show mobile menu when toggle is active */
+  .mobile-menu.active {
+    display: block;
+    position: absolute;
+    top: 60px; /* Adjust according to your navbar height */
+    right: 0;
+    background-color: #333; /* Background color for mobile menu */
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  /* Style for mobile menu links */
+  .mobile-menu a {
+    display: block;
+    padding: 15px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  .mobile-menu a:hover {
+    background-color: #555;
+  }
+  
+  /* Hamburger icon styles */
+  .hamburger {
+    display: none;
+  }
+  
+  .hamburger.active .bar {
+    background-color: #fff;
+  }
+  
+  /* Mobile menu toggle button */
+  .hamburger {
+    cursor: pointer;
+  }
+  
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px auto;
+    transition: 0.3s;
+  }
+  
+  /* Show hamburger icon on mobile */
+  @media (max-width: 768px) {
+    .nav-options {
+      display: none; /* Hide desktop menu items */
+    }
+    .hamburger {
+      display: block;
+    }
+    #Color-switcher {       
+        margin-right: 20px;
+        background-color: #413E44;
+        width: 80px;
+        height: 40px;
+        border-radius: 20px;
+    }
+    
+  }
+   /* Show hamburger icon on mobile */
+   @media (max-width: 450px) {
+    #Color-switcher {    
+        margin-right: 3px;
+        width: 60px;
+        height: 30px;
+       
+    }
+    #Color-switcher-mover {
+        position: absolute;
+        left: 5px;
+        top: 4px;
+        background-color: #fff;
+        width: 23px;
+        height: 23px;
+        border-radius: 50%;
+        transition: .6s;
+    }
+    
+    #Color-switcher-moved {
+        position: absolute;
+        background-color: #fff;
+        left: 35px;
+        top: 4px;
+        width: 23px;
+        height: 23px;
+        border-radius: 50%;
+        transition: .6s;
+    }
+    .input-group input {
+        margin-right: 2px;
+    }
+    .movies-container img {
+        width: 270px !important;
+        height: auto !important;
+        margin: 15px 0px 4px 5px !important;
+        border-radius: 18px;
+    }
+  }

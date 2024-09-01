@@ -11,6 +11,7 @@ export const Container = React.createContext()
 function Navbar() {
     const [toggle, setToggle] = useState(true)
     const [inputValue, setInputValue] = useState('')
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     
   return (
     <Container.Provider value={{toggle, inputValue}}>
@@ -34,11 +35,22 @@ function Navbar() {
             </NavLink>
         </div>
         <div className='input-group'>
-        <input type="text" placeholder='Search for movies os shows' onChange={(e)=>setInputValue(e.target.value)} />
-        <HiSearch fontSize={21} id="search"/>
-        <div id="Color-switcher" onClick={()=>setToggle(!toggle)}>
-            <div id={toggle ? 'Color-switcher-mover' : 'Color-switcher-moved'}></div>
+          <input type="text" placeholder='Search' onChange={(e)=>setInputValue(e.target.value)} />
+          <HiSearch fontSize={21} id="search"/>
+          <div id="Color-switcher" onClick={()=>setToggle(!toggle)}>
+              <div id={toggle ? 'Color-switcher-mover' : 'Color-switcher-moved'}></div>
+          </div>
+          <div className={`hamburger ${mobileMenuOpen ? 'active' : ''}`} onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+              <div className="bar"></div>
+              <div className="bar"></div>
+              <div className="bar"></div>
+          </div>
         </div>
+        <div className={`mobile-menu ${mobileMenuOpen ? 'active' : ''}`}>
+            <NavLink to="/Movies" onClick={() => setMobileMenuOpen(false)}>Movies</NavLink>
+            <NavLink to="/TvShows" onClick={() => setMobileMenuOpen(false)}>Tv Shows</NavLink>
+            <NavLink to="/Trending" onClick={() => setMobileMenuOpen(false)}>Trending</NavLink>
+            <NavLink to="/Pricing" onClick={() => setMobileMenuOpen(false)}>Pricing</NavLink>
         </div>
         </nav>
        <Routes>
